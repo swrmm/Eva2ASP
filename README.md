@@ -28,9 +28,7 @@ Abrir el proyecto en Visual Studio.
 Compilar la solución.
 Ejecutar la aplicación con el botón de inicio.
 Se abrirá la página de registro de paciente.
-También se puede ejecutar desde consola con:
 
-dotnet run
 Cómo usarla
 Escribir el nombre del paciente.
 Ingresar la edad.
