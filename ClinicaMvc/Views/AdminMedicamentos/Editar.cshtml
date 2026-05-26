@@ -1,0 +1,21 @@
+@model Medicamento
+
+@{
+    ViewData["Title"] = "Editar medicamento";
+}
+
+<section class="page-title">
+    <p class="eyebrow">Administracion</p>
+    <h1>Editar medicamento</h1>
+</section>
+
+<section class="section form-section">
+    <form asp-action="Editar" asp-route-id="@Model.Id" method="post" class="data-form">
+        <input asp-for="Id" type="hidden" />
+        <partial name="_FormularioMedicamento" model="Model" />
+        <div class="form-actions">
+            <button type="submit" class="button primary">Actualizar</button>
+            <a class="button secondary" asp-action="Index">Cancelar</a>
+        </div>
+    </form>
+</section>

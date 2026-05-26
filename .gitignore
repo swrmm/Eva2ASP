@@ -1,0 +1,10 @@
+.vs/
+bin/
+obj/
+**/bin/
+**/obj/
+*.user
+*.suo
+*.rsuser
+farmacia-home.png
+ClinicaMvc/appsettings.Development.json

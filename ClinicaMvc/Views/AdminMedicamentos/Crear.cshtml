@@ -1,0 +1,20 @@
+@model Medicamento
+
+@{
+    ViewData["Title"] = "Crear medicamento";
+}
+
+<section class="page-title">
+    <p class="eyebrow">Administracion</p>
+    <h1>Crear medicamento</h1>
+</section>
+
+<section class="section form-section">
+    <form asp-action="Crear" method="post" class="data-form">
+        <partial name="_FormularioMedicamento" model="Model" />
+        <div class="form-actions">
+            <button type="submit" class="button primary">Guardar</button>
+            <a class="button secondary" asp-action="Index">Cancelar</a>
+        </div>
+    </form>
+</section>

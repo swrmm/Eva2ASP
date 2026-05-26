@@ -1,0 +1,43 @@
+@model IEnumerable<Medicamento>
+
+@{
+    ViewData["Title"] = "Catalogo";
+    var cultura = new CultureInfo("es-CL");
+}
+
+<section class="page-title">
+    <p class="eyebrow">Listado publico</p>
+    <h1>Catalogo de medicamentos</h1>
+</section>
+
+<section class="section table-section">
+    <div class="responsive-table">
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Descripcion</th>
+                    <th>Categoria</th>
+                    <th>Laboratorio</th>
+                    <th>Precio</th>
+                    <th>Stock</th>
+                    <th>Vencimiento</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var medicamento in Model)
+                {
+                    <tr>
+                        <td>@medicamento.Nombre</td>
+                        <td>@medicamento.Descripcion</td>
+                        <td>@medicamento.Categoria</td>
+                        <td>@medicamento.Laboratorio</td>
+                        <td>@medicamento.Precio.ToString("C0", cultura)</td>
+                        <td>@medicamento.Stock</td>
+                        <td>@medicamento.FechaVencimiento.ToString("dd-MM-yyyy")</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</section>

@@ -1,0 +1,47 @@
+@model Medicamento
+
+<div asp-validation-summary="ModelOnly" class="validation-summary"></div>
+
+<div class="form-grid">
+    <div class="field">
+        <label asp-for="Nombre"></label>
+        <input asp-for="Nombre" />
+        <span asp-validation-for="Nombre"></span>
+    </div>
+
+    <div class="field">
+        <label asp-for="Categoria"></label>
+        <input asp-for="Categoria" />
+        <span asp-validation-for="Categoria"></span>
+    </div>
+
+    <div class="field">
+        <label asp-for="Laboratorio"></label>
+        <input asp-for="Laboratorio" />
+        <span asp-validation-for="Laboratorio"></span>
+    </div>
+
+    <div class="field">
+        <label asp-for="Precio"></label>
+        <input asp-for="Precio" type="number" min="1" step="1" />
+        <span asp-validation-for="Precio"></span>
+    </div>
+
+    <div class="field">
+        <label asp-for="Stock"></label>
+        <input asp-for="Stock" type="number" min="0" step="1" />
+        <span asp-validation-for="Stock"></span>
+    </div>
+
+    <div class="field">
+        <label asp-for="FechaVencimiento"></label>
+        <input asp-for="FechaVencimiento" type="date" asp-format="{0:yyyy-MM-dd}" />
+        <span asp-validation-for="FechaVencimiento"></span>
+    </div>
+
+    <div class="field field-full">
+        <label asp-for="Descripcion"></label>
+        <textarea asp-for="Descripcion" rows="5"></textarea>
+        <span asp-validation-for="Descripcion"></span>
+    </div>
+</div>

@@ -1,0 +1,21 @@
+@model Medicamento
+
+@{
+    ViewData["Title"] = "Eliminar medicamento";
+}
+
+<section class="page-title">
+    <p class="eyebrow">Confirmacion</p>
+    <h1>Eliminar medicamento</h1>
+</section>
+
+<section class="section form-section">
+    <div class="delete-panel">
+        <h2>@Model.Nombre</h2>
+        <p>Esta accion eliminara el medicamento del inventario.</p>
+        <form asp-action="Eliminar" asp-route-id="@Model.Id" method="post" class="form-actions">
+            <button type="submit" class="button danger-button">Eliminar</button>
+            <a class="button secondary" asp-action="Index">Cancelar</a>
+        </form>
+    </div>
+</section>

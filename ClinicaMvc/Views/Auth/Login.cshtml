@@ -1,0 +1,22 @@
+@{
+    ViewData["Title"] = "Login";
+}
+
+<section class="auth-shell">
+    <form asp-controller="Auth" asp-action="Login" method="post" class="auth-panel">
+        <input type="hidden" name="returnUrl" value="@ViewBag.ReturnUrl" />
+        <p class="eyebrow">Acceso restringido</p>
+        <h1>Panel administrador</h1>
+
+        <div asp-validation-summary="ModelOnly" class="validation-summary"></div>
+
+        <label for="usuario">Usuario</label>
+        <input id="usuario" name="usuario" type="text" autocomplete="username" required />
+
+        <label for="password">Contrasena</label>
+        <input id="password" name="password" type="password" autocomplete="current-password" required />
+
+        <button type="submit" class="button primary">Ingresar</button>
+        <p class="hint">Usuario de prueba: admin / admin123</p>
+    </form>
+</section>

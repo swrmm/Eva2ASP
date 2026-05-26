@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Farmacia Vida Sana</title>
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+<body>
+    <header class="site-header">
+        <nav class="nav-shell" aria-label="Navegacion principal">
+            <a class="brand" asp-controller="Home" asp-action="Index">Farmacia Vida Sana</a>
+            <div class="nav-links">
+                <a asp-controller="Home" asp-action="Index">Inicio</a>
+                <a asp-controller="Home" asp-action="Catalogo">Catalogo</a>
+                <a asp-controller="Home" asp-action="Contacto">Contacto</a>
+                <a asp-controller="AdminMedicamentos" asp-action="Index">Admin</a>
+                @if (Context.Session.GetString("AdminAutenticado") == "true")
+                {
+                    <form asp-controller="Auth" asp-action="Logout" method="post" class="logout-form">
+                        <button type="submit" class="link-button">Salir</button>
+                    </form>
+                }
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        @RenderBody()
+    </main>
+
+    <footer class="site-footer">
+        <p>Farmacia Vida Sana - Atencion cercana, medicamentos organizados y gestion segura.</p>
+    </footer>
+</body>
+</html>

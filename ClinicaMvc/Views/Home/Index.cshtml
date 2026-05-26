@@ -1,0 +1,46 @@
+@model IEnumerable<Medicamento>
+
+@{
+    ViewData["Title"] = "Inicio";
+    var cultura = new CultureInfo("es-CL");
+}
+
+<section class="hero">
+    <div class="hero-content">
+        <p class="eyebrow">Sistema web para farmacia</p>
+        <h1>Farmacia Vida Sana</h1>
+        <p>Consulta medicamentos disponibles y administra inventario con conexion directa a MySQL.</p>
+        <div class="hero-actions">
+            <a class="button primary" asp-controller="Home" asp-action="Catalogo">Ver catalogo</a>
+            <a class="button secondary" asp-controller="AdminMedicamentos" asp-action="Index">Panel admin</a>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="section-heading">
+        <p class="eyebrow">Medicamentos destacados</p>
+        <h2>Disponibles en catalogo</h2>
+    </div>
+
+    <div class="medicine-grid">
+        @foreach (var item in Model)
+        {
+            <article class="medicine-card">
+                <span class="pill">@item.Categoria</span>
+                <h3>@item.Nombre</h3>
+                <p>@item.Descripcion</p>
+                <dl>
+                    <div>
+                        <dt>Precio</dt>
+                        <dd>@item.Precio.ToString("C0", cultura)</dd>
+                    </div>
+                    <div>
+                        <dt>Stock</dt>
+                        <dd>@item.Stock</dd>
+                    </div>
+                </dl>
+            </article>
+        }
+    </div>
+</section>
