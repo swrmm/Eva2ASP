@@ -17,7 +17,7 @@ public class Medicamento
     [Range(1, 9999999, ErrorMessage = "El precio debe ser mayor a 0")]
     public decimal Precio { get; set; }
 
-    [Range(0, 99999, ErrorMessage = "El stock no puede ser negativo")]
+    [Range(1, 99999, ErrorMessage = "El stock debe ser mayor a 0")]
     public int Stock { get; set; }
 
     [DataType(DataType.Date)]

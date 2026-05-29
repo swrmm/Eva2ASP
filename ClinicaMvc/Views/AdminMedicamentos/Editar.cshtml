@@ -10,7 +10,7 @@
 </section>
 
 <section class="section form-section">
-    <form asp-action="Editar" asp-route-id="@Model.Id" method="post" class="data-form">
+    <form asp-action="Editar" asp-route-id="@Model.Id" method="post" class="data-form" novalidate>
         <input asp-for="Id" type="hidden" />
         <partial name="_FormularioMedicamento" model="Model" />
         <div class="form-actions">
